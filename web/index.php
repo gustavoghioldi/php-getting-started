@@ -19,7 +19,12 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
+  return $app['twig']->render('index.twig', array("saludo"=>"Hola"));
+});
+
+$app->get('/login', function() use($app){
+	$app['monolog']->addDebug("login");
+	return $app['twig']->render("login.twig");
 });
 
 $app->run();
