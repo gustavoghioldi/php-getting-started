@@ -5,8 +5,25 @@
 </head>
 
 <body>
-  {% include 'nav.html' %}
 
-  {% block content %}{% endblock %}
+
+ <div id="wrapper">
+
+        <!-- Sidebar -->
+          {% include 'nav.html' %}
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                          {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>  
 </body>
 </html>
